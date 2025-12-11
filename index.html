@@ -13,53 +13,67 @@
 
   /* 2. Body Styling & Centering Content */
   body {
-    font-family: 'Times Roman',serif; /* Clean, highly readable font stack */
-    background-color: #eef1f5; /* Very light gray background */
+    font-family: 'Times Roman',serif; 
+    background-color: #eef1f5; 
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    min-height: 100vh;       /* Ensure the body takes at least the full viewport height */
-    color: #333;             /* Dark gray text for high contrast */
-    line-height: 1.6;        /* Improved readability with good line spacing */
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;       
+    color: #333;             
+    line-height: 1.6;        
+    /* Required for 3D perspective on the parent container (body) */
+    perspective: 1000px; 
   }
 
   /* 3. Content Container (The "Card") */
   .container {
-    background-color: #ffffff; /* Crisp white for the main content card */
-    padding: 60px 40px;        /* Generous padding for ample white space */
-    border-radius: 10px;       /* Smooth, modern rounded corners */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* A stronger, more elegant shadow for depth */
-    max-width: 500px;          /* Optimal reading width */
-    width: 90%;                /* Responsive width for smaller screens */
-    text-align: center;        /* Centered alignment is clean and modern for small sites */
-    transition: transform 0.3s ease-in-out; /* Add subtle hover effect later if desired */
-    color:darkgreen;
+    background-color: #ffffff; 
+    padding: 60px 40px;        
+    border-radius: 10px;       
+    color: darkgreen;
+    max-width: 500px;          
+    width: 90%;                
+    text-align: center;        
+    
+    /* === 3D Effects === */
+    /* Add a subtle initial 3D rotation */
+    transform: rotateX(2deg) rotateY(2deg); 
+    /* A stronger, more elegant shadow for depth */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+    /* Smooth transition for hover effects */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; 
+  }
+
+  /* 4. Interactive Hover Effect: Lift the card and add a stronger shadow */
+  .container:hover {
+    transform: rotateX(0deg) rotateY(0deg) translateY(-5px); /* Lift up slightly and remove the initial tilt */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); /* Increase shadow depth */
   }
   
-  /* 4. Typography Styling */
+  /* 5. Typography Styling */
   h1 {
-    color: #1a1a2e; /* A very dark, deep blue/black color */
-    margin-bottom: 15px; /* Space between heading and paragraph */
-    font-size: 2.2rem; /* Large and prominent */
-    font-weight: 700;  /* Bold font weight */
+    color: #1a1a2e; 
+    margin-bottom: 15px; 
+    font-size: 2.2rem; 
+    font-weight: 700;  
   }
 
   p {
-    color: #555;        /* Medium gray, softer than the heading color */
-    font-size: 1.1rem;  /* Easy to read text size */
+    color: #555;        
+    font-size: 1.1rem;  
     margin-top: 0;
   }
 
-  /* 5. A subtle border line beneath the heading for structure */
+  /* 6. A subtle border line beneath the heading for structure */
   h1::after {
     content: '';
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #007bff; /* A nice accent blue */
-    margin: 20px auto 0; /* Center the line and add space below it */
+    background-color: #007bff; 
+    margin: 20px auto 0; 
     border-radius: 2px;
   }
 </style>

@@ -1,43 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Aron's Website</title>
+<meta charset="UTF-8">
+<!-- Ensures proper rendering and touch zooming on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aron's Website | Home</title>
 <style>
-  /* Basic Reset and Font Styling */
+  /* 1. Universal Box Sizing for Easier Layouts */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* 2. Body Styling & Centering Content */
   body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Modern, clean system font stack */
-    background-color: #f4f4f9; /* Soft off-white background */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean, highly readable font stack */
+    background-color: #eef1f5; /* Very light gray background */
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Centers content vertically on the screen */
-    color: #333; /* Dark gray for main text for professionalism */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Ensure the body takes at least the full viewport height */
+    color: #333;             /* Dark gray text for high contrast */
+    line-height: 1.6;        /* Improved readability with good line spacing */
   }
 
-  /* Container for content */
+  /* 3. Content Container (The "Card") */
   .container {
-    background-color: #ffffff; /* White background for the content area */
-    padding: 40px;
-    border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 600px; /* Prevents text from stretching too wide on large screens */
-    width: 90%;
-    text-align: center; /* Centers the text within the container */
+    background-color: #ffffff; /* Crisp white for the main content card */
+    padding: 60px 40px;        /* Generous padding for ample white space */
+    border-radius: 10px;       /* Smooth, modern rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* A stronger, more elegant shadow for depth */
+    max-width: 500px;          /* Optimal reading width */
+    width: 90%;                /* Responsive width for smaller screens */
+    text-align: center;        /* Centered alignment is clean and modern for small sites */
+    transition: transform 0.3s ease-in-out; /* Add subtle hover effect later if desired */
   }
-
+  
+  /* 4. Typography Styling */
   h1 {
-    color: #0056b3; /* A professional blue color */
-    margin-bottom: 10px; /* Spacing below the heading */
-    border-bottom: 2px solid #0056b3; /* A small underline for emphasis */
-    padding-bottom: 10px;
+    color: #1a1a2e; /* A very dark, deep blue/black color */
+    margin-bottom: 15px; /* Space between heading and paragraph */
+    font-size: 2.2rem; /* Large and prominent */
+    font-weight: 700;  /* Bold font weight */
   }
 
   p {
-    font-size: 1.1rem; /* Slightly larger text for readability */
-    line-height: 1.5; /* Good line spacing */
-    color: #555; /* Medium gray for secondary text */
+    color: #555;        /* Medium gray, softer than the heading color */
+    font-size: 1.1rem;  /* Easy to read text size */
+    margin-top: 0;
+  }
+
+  /* 5. A subtle border line beneath the heading for structure */
+  h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #007bff; /* A nice accent blue */
+    margin: 20px auto 0; /* Center the line and add space below it */
+    border-radius: 2px;
   }
 </style>
 </head>
